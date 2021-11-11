@@ -1,0 +1,26 @@
+---
+- name: Mediawiki install packages
+  apt:
+    name: "{{ mediawiki__default_packages }}"
+    update_cache: yes
+    state: present
+  when: mediawiki__install
+
+- name: Create apache service file
+  template:
+    src: vhost.conf
+    dest: "/etc/apache2/sites-available/{{ mediawiki__conf.hostname }}"
+  notify: Reload apache2 service
+  when:
+    - mediawiki__install
+    - mediawiki__configure
+
+- name: Create apache2 link service file
+  file:
+    path: "/etc/apache2/sites-enabled/{{ mediawiki__conf.hostname }}.conf"
+    src: "/etc/apache2/sites-available/{{ mediawiki__conf.hostname }}"
+    state: link
+  notify: Reload apache2 service
+  when:
+    - mediawiki__install
+    - mediawiki__configure

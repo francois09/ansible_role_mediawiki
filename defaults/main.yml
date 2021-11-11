@@ -1,0 +1,10 @@
+---
+# Default do nothing
+mediawiki__install: False
+mediawiki__configure: False
+
+# defaults file for MediaWiki
+mediawiki__default_packages:
+  - mediawiki
+
+mediawiki__use_ssl: False
