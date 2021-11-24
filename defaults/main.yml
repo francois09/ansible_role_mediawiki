@@ -6,5 +6,12 @@ mediawiki__configure: False
 # defaults file for MediaWiki
 mediawiki__default_packages:
   - mediawiki
+  - imagemagick
+  - mariadb-client
+  - python3-pymysql
+
+mediawiki__default_remove_packages:
+  - default-mysql-server
+  - mariadb-server
 
 mediawiki__use_ssl: False
