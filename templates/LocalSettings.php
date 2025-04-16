@@ -148,7 +148,7 @@ wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'Gadgets' );
 wfLoadExtension( 'ImageMap' );
-wfLoadExtension( 'LocalisationUpdate' );
+# wfLoadExtension( 'LocalisationUpdate' );
 wfLoadExtension( 'MultimediaViewer' );
 wfLoadExtension( 'OATHAuth' );
 wfLoadExtension( 'SecureLinkFixer' );
